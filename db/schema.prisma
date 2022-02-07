@@ -63,3 +63,21 @@ model Token {
 // enum TokenType {
 //   RESET_PASSWORD
 // }
+
+model Doctor {
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  first_name String
+  last_name  String
+}
+
+model Appointment {
+  id                 Int      @id @default(autoincrement())
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  patient_first_name String
+  patient_last_name  String
+  date_chosen        DateTime
+  time_chosen        DateTime
+}

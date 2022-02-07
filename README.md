@@ -1,7 +1,3 @@
-[![Blitz.js](https://raw.githubusercontent.com/blitz-js/art/master/github-cover-photo.png)](https://blitzjs.com)
-
-This is a [Blitz.js](https://github.com/blitz-js/blitz) app.
-
 # **notablebackend**
 
 ## Getting Started
@@ -35,8 +31,6 @@ Runs your tests using Jest.
 ```
 yarn test
 ```
-
-Blitz comes with a test setup using [Jest](https://jestjs.io/) and [react-testing-library](https://testing-library.com/).
 
 ## Commands
 
