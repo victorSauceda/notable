@@ -79,13 +79,7 @@ const Home = () => {
         <pre>
           <code>blitz generate all project name:string</code>
         </pre>
-        <div
-          style={{
-            marginBottom: "1rem",
-          }}
-        >
-          (And select Yes to run prisma migrate)
-        </div>
+
         <div>
           <p>
             Then <strong>restart the server</strong>
