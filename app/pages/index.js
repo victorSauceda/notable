@@ -1,23 +1,27 @@
-import { Suspense } from "react";
-import { Image, Link, useMutation, Routes } from "blitz";
-import Layout from "app/core/layouts/Layout";
-import { useCurrentUser } from "app/core/hooks/useCurrentUser";
-import logout from "app/auth/mutations/logout";
-import logo from "public/logo.png";
+import { Suspense } from "react"
+import { Image, Link, useMutation, Routes } from "blitz"
+import Layout from "app/core/layouts/Layout"
+import { useCurrentUser } from "app/core/hooks/useCurrentUser"
+import logout from "app/auth/mutations/logout"
+import logo from "public/logo.png"
 /*
  * This file is just for a pleasant getting started page for your new app.
  * You can delete everything in here and start from scratch if you like.
  */
 
 const UserInfo = () => {
-  const currentUser = useCurrentUser();
-  const [logoutMutation] = useMutation(logout);
+  const currentUser = useCurrentUser()
+  const [logoutMutation] = useMutation(logout)
 
   if (currentUser) {
-    return <>
-        <button className="button small" onClick={async () => {
-        await logoutMutation();
-      }}>
+    return (
+      <>
+        <button
+          className="button small"
+          onClick={async () => {
+            await logoutMutation()
+          }}
+        >
           Logout
         </button>
         <div>
@@ -25,9 +29,11 @@ const UserInfo = () => {
           <br />
           User role: <code>{currentUser.role}</code>
         </div>
-      </>;
+      </>
+    )
   } else {
-    return <>
+    return (
+      <>
         <Link href={Routes.SignupPage()}>
           <a className="button small">
             <strong>Sign Up</strong>
@@ -38,12 +44,14 @@ const UserInfo = () => {
             <strong>Login</strong>
           </a>
         </Link>
-      </>;
+      </>
+    )
   }
-};
+}
 
 const Home = () => {
-  return <div className="container">
+  return (
+    <div className="container">
       <main>
         <div className="logo">
           <Image src={logo} alt="blitzjs" />
@@ -51,10 +59,13 @@ const Home = () => {
         <p>
           <strong>Congrats!</strong> Your app is ready, including user sign-up and log-in.
         </p>
-        <div className="buttons" style={{
-        marginTop: "1rem",
-        marginBottom: "1rem"
-      }}>
+        <div
+          className="buttons"
+          style={{
+            marginTop: "1rem",
+            marginBottom: "1rem",
+          }}
+        >
           <Suspense fallback="Loading...">
             <UserInfo />
           </Suspense>
@@ -68,9 +79,13 @@ const Home = () => {
         <pre>
           <code>blitz generate all project name:string</code>
         </pre>
-        <div style={{
-        marginBottom: "1rem"
-      }}>(And select Yes to run prisma migrate)</div>
+        <div
+          style={{
+            marginBottom: "1rem",
+          }}
+        >
+          (And select Yes to run prisma migrate)
+        </div>
         <div>
           <p>
             Then <strong>restart the server</strong>
@@ -88,23 +103,29 @@ const Home = () => {
             </Link>
           </p>
         </div>
-        <div className="buttons" style={{
-        marginTop: "5rem"
-      }}>
-          <a className="button" href="https://blitzjs.com/docs/getting-started?utm_source=blitz-new&utm_medium=app-template&utm_campaign=blitz-new" target="_blank" rel="noopener noreferrer">
+        <div
+          className="buttons"
+          style={{
+            marginTop: "5rem",
+          }}
+        >
+          <a
+            className="button"
+            href="https://blitzjs.com/docs/getting-started?utm_source=blitz-new&utm_medium=app-template&utm_campaign=blitz-new"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Documentation
-          </a>
-          <a className="button-outline" href="https://github.com/blitz-js/blitz" target="_blank" rel="noopener noreferrer">
-            Github Repo
-          </a>
-          <a className="button-outline" href="https://discord.blitzjs.com" target="_blank" rel="noopener noreferrer">
-            Discord Community
           </a>
         </div>
       </main>
 
       <footer>
-        <a href="https://blitzjs.com?utm_source=blitz-new&utm_medium=app-template&utm_campaign=blitz-new" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://blitzjs.com?utm_source=blitz-new&utm_medium=app-template&utm_campaign=blitz-new"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Powered by Blitz.js
         </a>
       </footer>
@@ -241,11 +262,12 @@ const Home = () => {
           }
         }
       `}</style>
-    </div>;
-};
+    </div>
+  )
+}
 
-Home.suppressFirstRenderFlicker = true;
+Home.suppressFirstRenderFlicker = true
 
-Home.getLayout = page => <Layout title="Home">{page}</Layout>;
+Home.getLayout = (page) => <Layout title="Home">{page}</Layout>
 
-export default Home;
+export default Home
