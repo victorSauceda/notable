@@ -108,16 +108,7 @@ const Home = () => {
           style={{
             marginTop: "5rem",
           }}
-        >
-          <a
-            className="button"
-            href="https://blitzjs.com/docs/getting-started?utm_source=blitz-new&utm_medium=app-template&utm_campaign=blitz-new"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        ></div>
       </main>
 
       <style jsx global>{`
